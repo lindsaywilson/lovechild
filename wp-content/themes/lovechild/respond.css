@@ -1,0 +1,287 @@
+#mobile-header,
+.subtoggle{ display:none}
+#menu{ display:block}
+#map{ float:right}
+body.news #sidebar #archive, 
+body.blog #sidebar #archive{ height:auto}
+#spinbox #slides li a{ position:absolute; top:0; left:0; width:100%; height:100%}
+
+@media screen and (max-width: 800px) {
+	
+	body{ background:url(images/bg/clouds-tile.jpg)}
+	#frame{ margin:0; padding:20px 15px 60px; background:none}
+	#frame #content{ width:auto; padding:0}
+	body .box{ width:auto}
+	
+	h1{ font-size:50px}
+	
+	/* NAV */
+	#header #bar,
+	#header #menu{ display:none}
+	#header #menu{ position:relative; z-index:1; }
+	#mobile-header{ display:block; background:url(images/design/tile-header-mobile.png); height:47px; padding:0 20px; position:relative; z-index:2; margin-bottom:-4px}
+	#mobile-menu{ color:#fff;  position:absolute; right:20px; top:8px; font-size:1.8em; cursor:pointer;}
+		
+	#header{ position:relative; height:auto; z-index:999}
+	#header #nav{ position:static; margin:0; left:0; width:auto; font-size:1em}
+	#header #nav > li#logo{ display:none}
+	#header #nav > li{ display:block; padding:0; margin:0; border-bottom:2px solid #fff}
+	#header #nav > li > a{ height:auto; display:block; padding:0; text-decoration:none}
+	#header #nav > li > a .button{ display:block; margin:0; padding:0; height:auto; line-height:1; padding:6px 0; border-radius:0; border:none; border:none; text-decoration:none; font-size:1.1em; font-weight:700}
+	#header #nav > li:first-child > a .button{ padding-top:11px}
+	#header #nav > li > a .button span{ height:auto}
+	
+	#header #nav > li > a > img,
+	#header #nav > li.selected img,
+	#header #nav > li:hover img,
+	#header #nav > li > a .button span.shadow{ display:none}
+	#header #nav > li.selected .button, #header #nav > li:hover .button{ top:0}
+	
+	#header #nav > li:hover #productsDrop,
+	#header #nav > li:hover > .drop{ display:none}
+	
+	/* Subnav */
+	#nav li span.subtoggle{ position:absolute; right:0; top:0; display:block; z-index:999; padding:7px 20px;  color:#fff; cursor:pointer; font-size:1em; background:rgba(255,255,255,0.3); box-sizing:border-box}
+	#nav li ul li span.subtoggle{ padding:8px 20px 9px 21px;}
+	#nav li ul li ul li span.subtoggle{ padding-top:9px}
+	#nav > li:first-child > span.subtoggle{ padding-top:12px}
+	
+	#header #nav > li #productsDrop,
+	#header #nav > li .drop{ position:static; left:0; width:100%; padding:0; margin:0; border-radius:0; border:none; padding:0}
+	#header #nav > li #productsDrop{ background:#ff471f}
+	#header #nav > li #productsDrop > li,
+	#header #nav > li #productsDrop > li.purees,
+	#header #nav > li #productsDrop > li.pat-a-cakes,
+	#header #nav > li #productsDrop > li.toodle-os,
+	#header #nav > li #productsDrop > li.fruity-chomps,
+	#header #nav > li .drop li{ height:auto; background:none; padding:0; margin:0; border:none}
+	#header #nav > li #productsDrop > li > a,
+	#header #nav > li #productsDrop > li.fruity-chomps a, 
+	#header #nav > li #productsDrop > li.toodle-os a, 
+	#header #nav > li #productsDrop > li.pat-a-cakes a,
+	#header #nav > li .drop li a{ padding:7px 20px; margin:0 0 1px; height:auto; font-size:18px; color:#fff; text-align:center; font-weight: 500; line-height: 1;}
+	#header #nav > li #productsDrop > li:hover.purees,
+	#header #nav > li #productsDrop > li:hover.fruity-chomps,
+	#header #nav > li #productsDrop > li:hover.toodle-os,
+	#header #nav > li #productsDrop > li:hover.pat-a-cakes{ background:rgba(0,0,0,.1)}
+	
+	#header #nav > li #productsDrop > li ul{ position:static; left:0; background:rgba(0,0,0,0.1); padding:0;border-radius:0; border:none; margin:0; line-height:1; text-align:center}
+	#header #nav > li #productsDrop > li ul li{ margin:0}
+	#header #nav > li #productsDrop > li ul li a{ line-height:1; padding:8px 0; }
+	#header #nav > li #productsDrop > li ul li a:hover{ background:rgba(0,0,0,.1)}
+	#header #nav > li #productsDrop > li ul li ul{ top:0; margin:0; padding:0}
+	
+	#header #nav > li #productsDrop > li:hover ul,
+	#header #nav > li #productsDrop > li ul li:hover ul{ display:none}
+	
+	/* Language */
+	#header #social{ text-align:left;  position:relative; margin:0; right:0; top:10px; padding-left:20px}
+	#header #social li#lang{ position:absolute; width:auto; right:20px; top:-2px; margin-right:20px  }
+	#header #social li#lang ul{ width:auto; position:static; background:#fff; list-style:none; padding:4px 10px 4px 0}
+	#header #social li#lang ul li{ width:auto; margin:5px 0 0 0; padding:0}
+	#header #social li#lang ul li:first-child,
+	#header #social li#lang ul:hover li:first-child{ margin:0;}
+	#header #social li#lang ul li a{ padding:10px 0 10px 55px; font-size:10px; white-space:nowrap}
+	#header #social li#lang,
+	#header #social li#lang ul li,
+	#header #social li#lang ul li a{ height:auto; }
+	#header #social li#lang ul:hover li{ display:none}
+	#header #social li#lang ul:hover li:first-child{ display:inline-block}
+	
+	
+	/* home page */
+	#frame{ height:auto !important}
+	#frame #hills{ height:auto}
+	#spinbox{ margin-top:5px}
+	#spinbox #slides li,
+	#spinbox #slides li .overlay,
+	#spinbox #slides li.blank{ width:100%; }
+	#spinbox #slides{height:435px; width:99%}
+	#spinbox #slides li{ background:#dc291e; height:390px }
+	#spinbox #slides li.blank{ border:5px solid #fff; height:390px; background:none}
+	#spinbox #slides li .overlay{ padding-top:0; padding-bottom:10px; position:absolute; top:auto; bottom:10px; height:auto; width:auto; background:none}
+	#spinbox #slides li .overlay .icon{ top:auto; bottom:0; left:20px}
+	#spinbox #slides img{ max-width:100%}
+	#spinbox #indicators{ right:0}
+	#boxes{ text-align:center; margin-bottom:40px}
+	#boxes li{ margin:15px 0 0 !important}
+
+	
+	/* Products */
+	#productsNav,
+	body.products.product .box #productTypes,
+	body.products.product .box .separator.productTypes{ display:none}
+	#productTypes{width:auto}
+	#productTypes li{ max-width:100%; padding-left:0; padding-right:0}
+	#products li{ margin-left:5px; margin-right:5px}
+	#productSubTypes li:not(:last-of-type){ margin-bottom:60px}
+	body.products.product .box{ margin-right:0; width:auto; float:none}
+	body.products.product #productInfo{ float:none; margin:20px auto 0}
+	body.products.product .box #productTypes{ width:auto}
+	body.products.product .box #productTypes li{ width:auto; margin-left:0; margin-right:0; padding-left:0; padding-right:0}
+	.new{ left:10px}
+	
+	#sidebar{ display:none}
+	body.our-story .box{ width:auto}
+	.box img{ max-width:100%; height:auto}
+	
+	
+	/* forms */
+	body.contact form input[type="text"], 
+	body.questions form input[type="text"], 
+	body.contact form input[type="email"], 
+	body.questions form input[type="email"],
+	body.contact form textarea, 
+	body.questions form textarea{ width:96%; max-width:auto; min-width:inherit; position:static; padding-left:2%; padding-right:2%}	
+	
+	
+	/* news/blog */
+	body.news .box, body.blog .box{ width:auto; margin-right:0}
+	body.news .box .teaser img, body.blog .box .teaser img{ position:static; left:0; right:0; margin:0 auto!important; width:auto!important; height:auto!important; display:block; max-width:100%}
+	body.news .box .left, body.blog .box .left{ width:auto; float:none}
+	body.news .box .teaser, body.blog .box .teaser{ position:static; width:auto}
+	body .box.comments{ margin-left:0}
+	body.news .box .teaser.wide, body.blog .box .teaser.wide{ width:auto; height:auto; position:static}
+	body.news .box .entry, body.blog .box .entry{ padding:0 }
+	body.blog #frame{ background:none}
+	#pagination{ width:auto}
+	
+	#twidget{ display:none}
+	#sidebar.locked{ padding:0 !important;}
+	body.news #sidebar form #search, 
+	body.blog #sidebar form #search{ width:100%; max-width:240px}
+	body.news #sidebar, 
+	body.blog #sidebar{ display:block; margin:0; position:static; width:auto; height:auto !important}
+	body.news #sidebar h3, 
+	body.blog #sidebar h3{ display:inline-block; width:50px; text-align:left; margin:0}
+	body.news #sidebar #tags, 
+	body.blog #sidebar #tags{ border:none; margin-bottom:0; padding-bottom:10px}
+	body.news #sidebar #tags ul, 
+	body.blog #sidebar #tags ul,
+	body.news #sidebar #archive ul, 
+	body.blog #sidebar #archive ul{ display:inline; width:auto; text-align:left}
+	body.news #sidebar #tags ul li, 
+	body.blog #sidebar #tags ul li,
+	body.news #sidebar #archive ul li, 
+	body.blog #sidebar #archive ul li{ display:inline; margin-right:10px}
+	body.news #sidebar ul li a, 
+	body.blog #sidebar ul li a{ display:inline-block}
+	
+	
+	/* Nutrition */
+	body.nutrition .box,
+	body.nutrition .box.intro{ width:auto}
+	body .box.intro{ position:static; opacity:1 !important}
+	body.nutrition .box.first{ margin-top:0 !important}
+	
+	/* contact */
+	body.contact #frame{ background:none}
+	body.contact .box{ width:auto}
+	body.contact form, body.questions form{ margin-bottom:30px}
+	#newsletter h3{ line-height:1; height:auto}
+	#newsletter{ position:static; width:auto; height:auto}
+	#newsletter input[type="submit"]{ width:auto}
+	#newsletter input[type="text"], #newsletter input[type="email"]{ margin-bottom:10px;}
+
+	
+	/* Stores */
+	.retailers .box .stores,
+	.retailers .box h2,
+	.retailers .the-content{ display:none}
+	#locator{ position:static; margin-bottom:40px; width:auto; text-align:left; margin-top:20px}
+	#locator a#locate{ display:inline-block}
+	#retailers{ float:none; height:auto}
+	#map{ width:100%; margin-bottom:30px; float:none}
+	#map img{ max-width:none}
+	.retailers .box .online-logos .stores, 
+	.retailers .box .online-logos h2{ display:block}
+	body.retailers .box h2{ font-size:20px; margin:0; padding:0}
+	.retailers .online-logos .stores{ height:auto !important; margin:0}
+	.retailers .online-logos .stores ul li{ display:block; padding:0; margin:0 !important}
+	.stores .grad.left{ display:none!important}
+	
+
+}
+
+@media screen and (max-width: 480px) {
+	
+	body:not(.home){ background:none}
+	#frame{  background:none; padding-top:0}
+	#mobile-header{ padding:0 10px}
+	#mobile-menu{ right:10px; }
+	#header #menu{ border-bottom:1px solid #dc291e; padding-bottom:15px; background:#fff }
+	#header #social{ padding-left:10px}
+	#header #social li{ margin-right:5px}
+	#header #social li#lang{ right:10px; margin-right:10px}
+	
+	#boxes img{ max-width:100%}
+	#spinbox{ margin-top:20px}
+	#spinbox #slides{ height:280px}
+	#spinbox #slides li,
+	#spinbox #slides li.blank{ height:230px;}
+	#spinbox #slides li .overlay { padding:0 15px; }
+	#spinbox #slides li .overlay h2{ font-size:15px; padding-left:0}
+	#spinbox #slides li .overlay h2 span{ font-size:12px}
+	#spinbox #slides li .overlay .icon{ display:none}
+	
+	h1{ font-size:30px; line-height:40px}
+	h2{ font-size:20px}
+	
+	#breadcrumb{ position:static; text-align:left; margin-bottom:5px}
+	#breadcrumb li:first-of-type{ margin-left:0}
+	
+	/* porducts */
+	body.products.product .box .illustration{ display:block; margin:10px auto 20px; float:none; max-width:75%}
+	body.products.product #productInfo{ margin-top:0}
+	.new{ left:0; position:static; margin-top:20px; width:70px}
+	
+	body.nutrition .box.intro{ padding-bottom:10px; margin-top:20px}
+	
+	body .box{ padding:30px 0; border:none}
+	body .box.intro{ padding:10px 20px}
+	body.our-story .box,
+	body.nutrition .box{ border:none; margin:0; padding-bottom:0}
+	.split td{ display:block; width:auto}
+	.split td:last-child h2, .split td:last-child h3, .split td:last-child p, .split td:last-child ul{ margin-left:0}
+	body .box .alignleft{ display:block; float:none}
+	
+	.floater{ display:block; margin:0 auto; width:auto !important; height:auto !important; text-align:center}
+	.floater.right,
+	.floater.left{ float:none}
+	.floater.right img,
+	.floater.left img{ position:static; max-width:50%}
+	
+	/* questions */
+	body.questions #search{ position:static; margin-top:20px}
+	#faqs li > ul{ padding-left:0}
+	#faqs li h2{ font-size:25px}
+	#faqs li > ul > li h3{ font-size:20px}
+	
+	body.news .box, body.blog .box{ border:none; border-bottom:1px solid #aaddda; border-radius:0; margin-bottom:50px}
+	body.news .box, body.blog .box{ padding-left:0; padding-right:0; padding-top:0}
+	body.news .box .count, body.blog .box .count{ left:auto; right:0px}
+	body.news .box h2, body.blog .box h2{ font-size:25px; padding-right:15px}
+	body.news #sidebar, 
+	body.blog #sidebar{ margin-top:20px; border-bottom:1px solid #a4a4a4; margin-bottom:20px}
+	body.news #sidebar form #search, 
+	body.blog #sidebar form #search{ border:1px solid #a4a4a4}
+	
+	body.contact .box{ border:none}
+	body.contact .box #riceCake,
+	body.contact .box #apricot{ display:none}
+	body.contact .box div{ padding:0 !important}
+	#contactInfo p span{ margin-left:0!important; display:block}
+	#newsletter { margin-top:20px}
+	#newsletter input[type="text"], #newsletter input[type="email"]{ width:96%; display:block; padding-left:2%;padding-right:2%}
+	#newsletter input[type="submit"]{ width:auto}
+	
+}
+
+@media screen and (max-width: 320px) {
+	
+	#spinbox #slides li .overlay { padding:0 10px; bottom:5px}
+	#spinbox #slides{ height:220px}
+	#spinbox #slides li,
+	#spinbox #slides li.blank{ height:170px}
+	
+}

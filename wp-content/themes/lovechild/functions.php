@@ -20,6 +20,13 @@
 	<?php }
 	add_action('login_enqueue_scripts', 'my_login_logo');
 	
+	function respond() {
+		wp_enqueue_style('fonts', get_stylesheet_directory_uri().'/fonts.css');
+		wp_enqueue_style('respond', get_stylesheet_directory_uri().'/respond.css');
+	}
+	
+	add_action('wp_enqueue_scripts', 'respond');
+	
 	function my_login_logo_url() {
 	    return get_bloginfo('url');
 	}

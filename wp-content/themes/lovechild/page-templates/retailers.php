@@ -22,20 +22,24 @@ window.retailers = <?php echo get_option('retailer_list'); ?>;
 				<input type="submit">
 			</form>
 		</div>
+        <div class="the-content">
 		<?php the_lang_content($post->ID); ?>
+        </div>
 		<div class="separator grey"></div>
 		<?php retailer_logos(); ?>
-		<div id="retailers">
+		<div id="map">
+			<div id="map-canvas"></div>
+		</div>
+        <div id="retailers">
 			<input type="text" id="search" placeholder="<?php lang_split('Filter by store', 'Trier par magasin'); ?>">
 			<ol>
 			</ol>
 		</div>
-		<div id="map">
-			<div id="map-canvas"></div>
-		</div>
 		<div class="clear"></div>
 		<br />
+        <div class="online-logos">
 		<?php retailer_logos('online'); ?>
+        </div>
 	</div>
 </div>
 

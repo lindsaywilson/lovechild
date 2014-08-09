@@ -61,17 +61,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css" type="text/css">
 	<?php require_once 'lib/Mobile_Detect.php'; $detect = new Mobile_Detect; ?>
-	<meta name="viewport" content="width=device-width, initial-scale=<?php
-		if ($detect->isMobile()) {
-			if ($detect->isTablet()) {
-				echo '0.7';
-			}else{
-				echo '0.3';
-			}
-		}else{
-			echo '1';
-		}
-	?>">
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;">
 	<?php wp_head(); ?>
 	<script type="text/javascript">
 
@@ -89,35 +79,12 @@
 </head>
 <body class="<?php echo get_slug(); ?> <?php echo get_product(); ?>">
 	<div id="header">
-		<ul id="social">
-			<li id="lang">
-				<ul>
-					<?php foreach ($langs as $lang) { ?>
-					<li>
-						<a href="<?php the_permalink(); ?>?lang=<?php echo $lang['code']; ?>">
-							<img src="<?php bloginfo('template_url'); ?>/images/nav/<?php echo $lang['icon']; ?>.png" alt="<?php echo $lang['name']; ?>"> <?php echo $lang['name']; ?>
-						</a>
-					</li>
-					<?php } ?>
-				</ul>
-			</li>
-			<li>
-				<a href="http://www.facebook.com/<?php lang_split($social->display('facebook'), $social->display('facebook_fr_can')); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/social/fb-small.png" alt="Love Child on Facebook"></a>
-			</li>
-			<li>
-				<a href="http://www.twitter.com/<?php lang_split($social->display('twitter'), $social->display('twitter_fr_can')); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/social/twi-small.png" alt="Love Child on Twitter"></a>
-			</li>
-			<li>
-				<a href="http://www.pinterest.com/<?php echo $social->display('pinterest'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/social/pin-small.png" alt="Love Child on Pinterest"></a>
-			</li>
-			<li>
-				<a href="http://www.instagram.com/<?php echo $social->display('instagram'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/social/insta-small.png" alt="Love Child on Instagram"></a>
-			</li>
-			<li>
-				<a href="http://www.youtube.com/<?php echo $social->display('youtube'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/social/yt-small.png" alt="Love Child on YouTube"></a>
-			</li>
-		</ul>
-		<ul id="nav">
+        <div id="mobile-header">
+            <a id="mobile-logo" href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/images/design/logo-mobile.png"></a>
+            <div id="mobile-menu" class="icon-menu"></div>
+        </div>
+		<div id="menu">
+        <ul id="nav">
 			<li <?php is_selected('products'); ?>>
 				<a href="<?php echo home_url(); ?>/products"><span class="button products"><span class="wrap"><span class="main"><?php nav_title('products'); ?></span></span></span><img src="<?php bloginfo('template_url'); ?>/images/nav/products.png" alt="<?php nav_title('products'); ?>"></a>
 				<ul id="productsDrop">
@@ -263,6 +230,35 @@
 				</a>
 			</li>
 		</ul>
+        <ul id="social">
+			<li id="lang">
+				<ul>
+					<?php foreach ($langs as $lang) { ?>
+					<li>
+						<a href="<?php the_permalink(); ?>?lang=<?php echo $lang['code']; ?>">
+							<img src="<?php bloginfo('template_url'); ?>/images/nav/<?php echo $lang['icon']; ?>.png" alt="<?php echo $lang['name']; ?>"> <?php echo $lang['name']; ?>
+						</a>
+					</li>
+					<?php } ?>
+				</ul>
+			</li>
+			<li>
+				<a href="http://www.facebook.com/<?php lang_split($social->display('facebook'), $social->display('facebook_fr_can')); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/social/fb-small.png" alt="Love Child on Facebook"></a>
+			</li>
+			<li>
+				<a href="http://www.twitter.com/<?php lang_split($social->display('twitter'), $social->display('twitter_fr_can')); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/social/twi-small.png" alt="Love Child on Twitter"></a>
+			</li>
+			<li>
+				<a href="http://www.pinterest.com/<?php echo $social->display('pinterest'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/social/pin-small.png" alt="Love Child on Pinterest"></a>
+			</li>
+			<li>
+				<a href="http://www.instagram.com/<?php echo $social->display('instagram'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/social/insta-small.png" alt="Love Child on Instagram"></a>
+			</li>
+			<li>
+				<a href="http://www.youtube.com/<?php echo $social->display('youtube'); ?>" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/social/yt-small.png" alt="Love Child on YouTube"></a>
+			</li>
+		</ul>
+        </div>
 		<div id="bar">
 			<div class="corner left"></div>
 			<div class="corner right"></div>

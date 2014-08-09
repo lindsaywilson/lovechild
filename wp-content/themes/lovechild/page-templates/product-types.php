@@ -13,8 +13,7 @@
 
 <div id="content">
 	<div class="box">
-		<h1><?php the_lang_content($post->ID, 'page', 'post_title'); ?></h1>
-		<ul id="breadcrumb">
+    	<ul id="breadcrumb">
 			<?php if (count($ancestors) > 1) { ?>
 			<li><a href="<?php echo home_url().'/products'; ?>"><?php lang_split('Products', 'Produits'); ?></a></li>
 			<li>></li>
@@ -23,6 +22,9 @@
 			<li><a href="<?php echo home_url().'/products'; ?>"><?php lang_split('Back to products', 'Retour aux Produits'); ?></a></li>
 			<?php } ?>
 		</ul>
+        
+		<h1><?php the_lang_content($post->ID, 'page', 'post_title'); ?></h1>
+		
 		<?php
 
 			$productTypes = pods('product_type', $post->post_name);

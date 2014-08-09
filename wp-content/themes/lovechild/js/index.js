@@ -24,6 +24,55 @@ $(document).ready(function(){
 		}
 	});
 	
+	
+	// Define Global Mobile
+	window.isMobile = false;
+	window.deviceHasChanged = false;
+	LAYOUT.checkMobile;
+	
+	// Define if on mobile (based on CCS media Queries : Device < 960px wide)
+	var resizeTimer;
+	LAYOUT.timerResize();
+	$(window).resize(function() {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(function() { LAYOUT.timerResize(); }, 100);
+	});
+	LAYOUT.timerResize();
+	
+	// Add subnav toggle
+	$('#nav li:has(ul)').append('<span class="icon-plus subtoggle"></span>');
+	$('.subtoggle').click( function(){
+		if($(this).hasClass('icon-plus')){
+			$(this).siblings('ul').slideDown();
+			$(this).attr('class','icon-close subtoggle');
+		} else{
+			$(this).siblings('ul').slideUp();
+			$(this).attr('class','icon-plus subtoggle');
+		}
+	});
+	
+	
+	// Mobile menu toggle
+	$('#mobile-menu').click( function(){
+		if($(this).hasClass('icon-menu')){
+			$('#menu').slideDown('fast');
+			$(this).attr('class','icon-close')
+		}else{
+			$('#menu').slideUp('fast');
+			$(this).attr('class','icon-menu')
+		}
+		
+	});
+	
+	// Language toggle
+	$('li#lang ul li:first-child a').click( function(){
+		if(window.isMobile){
+			$(this).parent().siblings().toggle();
+			return false
+		}
+	})
+	
+
 	//
 	// It's the home page!
 	//
@@ -475,6 +524,9 @@ $(document).ready(function(){
 				map.setZoom(14);
 				map.setCenter(results[0].geometry.location);
 			});
+			if($(window).width() <= 800){
+				window.location.hash = 'map';
+			}
 		});
 		
 		$('#retailers #search').on('keyup', function(e){
@@ -512,6 +564,9 @@ $(document).ready(function(){
 		$(document).on('click', '#retailers a', function(e){
 			e.preventDefault();
 			google.maps.event.trigger(markers[$(this).closest('li').index()], 'click');
+			if($(window).width() <= 800){
+				window.location.hash = 'map';
+			}
 		});
 		
 	}
@@ -562,4 +617,61 @@ $(document).ready(function(){
 		}
 		catch(e){}
 	}
+
+
 });
+
+
+
+	// ---------------------
+	// LAYOUT
+	// ---------------------
+	
+    var LAYOUT = {};
+    LAYOUT.timerResize = function(){
+        
+        // Define if mobile
+        this.checkMobile();
+
+        // Display navigation if not mobile
+        if(!window.isMobile){
+            MOBILE.showNav();
+        }
+    };
+	
+    LAYOUT.checkMobile = function (){
+        // Define if on mobile (based on CCS media Queries : Device < 800px wide)
+        if ( $("#header").css("position") === 'relative') {
+			if( window.isMobile ){
+                window.deviceHasChanged = false;
+            }else{
+               window.deviceHasChanged = true; 
+               window.isMobile = true;
+			   MOBILE.hideNav();
+            }  
+        }else{
+            if( !window.isMobile ){
+                window.deviceHasChanged = false;
+            }else{
+                window.deviceHasChanged = true;
+                window.isMobile = false;
+				MOBILE.showNav();
+            }
+        }
+    };
+	
+	// ---------------------
+	// MOBILE
+	// ---------------------
+	
+    var MOBILE = {};
+    MOBILE.showNav = function (){
+		$('#menu').show();
+		$('#nav ul').attr('style','');
+        $('#mobile-menu').removeClass('icon-close').addClass('icon-menu');
+    };
+    MOBILE.hideNav = function (){
+		$('#menu').hide();
+		$('.subtoggle').removeClass('icon-close').addClass('icon-plus');
+		$('#mobile-menu').removeClass('icon-close').addClass('icon-menu');
+    };

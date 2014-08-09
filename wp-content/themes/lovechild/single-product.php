@@ -32,7 +32,6 @@
 
 <div id="content">
 	<div class="box" style="color:<?php echo $product->display('colour'); ?>;border-color:<?php echo $product->display('colour'); ?>;">
-		<h1><?php the_lang_content($product->id(), 'product', 'post_title'); ?></h1>
 		<ul id="breadcrumb">
 			<li><a href="<?php echo home_url().'/products'; ?>"><?php lang_split('Products', 'Produits'); ?></a></li>
 			<?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -40,13 +39,14 @@
 			<li><a href="<?php echo home_url().'/products/'.$breadcrumb['slug']; ?>"><?php echo $breadcrumb['name']; ?></a></li>
 			<?php } ?>
 		</ul>
+        <h1><?php the_lang_content($product->id(), 'product', 'post_title'); ?></h1>
 		<?php if ($product->field('new') === '1') { ?>
 		<div class="new">New</div>
 		<?php } ?>
 		<img src="<?php echo $product->display('illustration'); ?>" class="illustration">
 		<h2 style="color:<?php echo $product->display('colour'); ?>;"><?php echo strip_tags(get_the_lang_content($product->id(), 'product')); ?></h2>
 		<div class="clear"></div>
-		<div class="separator grey"><span><?php lang_split('Other products', 'Autres produits'); ?></span></div>
+		<div class="separator grey productTypes"><span><?php lang_split('Other products', 'Autres produits'); ?></span></div>
 		<ul id="productTypes">
 			<?php $productTypes = get_product_types(); ?>
 			<?php while ($productTypes->fetch()) {  ?>

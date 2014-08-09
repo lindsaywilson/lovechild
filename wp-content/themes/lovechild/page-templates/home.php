@@ -26,13 +26,14 @@
 				
 			?>">
 				<?php if (!$blank) { ?>
+                <a class="link" href="<?php echo $spinbox->display('link'); ?>" target="<?php echo $spinbox->field('target'); ?>">
 				<div class="overlay">
-					<a href="<?php echo $spinbox->display('link'); ?>" target="<?php echo $spinbox->field('target'); ?>"></a>
 					<h2><?php the_lang_content($spinbox->id(), 'spinbox', 'post_title'); ?>
 					<span><?php the_lang_content($spinbox->id(), 'spinbox', 'description'); ?></span></h2>
 					<img src="<?php echo get_bloginfo('template_url').'/images/icons/'.$spinbox->field('icon'); ?>.png" class="icon">
-				</div>
+				</div></a>
 				<?php } ?>
+                
 				<img src="<?php the_lang_content($spinbox->id(), 'spinbox', 'image'); ?>" class="bg">
 			</li>
 			<?php } ?>
