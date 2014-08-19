@@ -3,4 +3,5 @@ wp-config.php
 
 # Ignore paths that contain user-generated content.
 wp-content/uploads
+wp-content/themes/lovechild/node_modules
 

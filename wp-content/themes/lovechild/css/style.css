@@ -1127,10 +1127,6 @@ strong {
 #header #nav > li #productsDrop > li:hover {
   background-color: #ff471f;
 }
-#header #nav > li #productsDrop > li:hover > ul,
-#header #nav > li #productsDrop > li:hover .connector {
-  display: block;
-}
 #header #nav > li #productsDrop > li:hover.purees {
   background-image: url(../images/icons/purees-white.png);
 }
@@ -1203,9 +1199,6 @@ strong {
 #header #nav > li #productsDrop > li ul li {
   white-space: nowrap;
 }
-#header #nav > li #productsDrop > li ul li:hover ul {
-  display: block;
-}
 #header #nav > li #productsDrop > li ul li ul {
   width: auto;
   margin-left: 0;
@@ -1229,14 +1222,6 @@ strong {
 #header #nav > li.selected .button,
 #header #nav > li:hover .button {
   top: -72px;
-}
-#header #nav > li.selected img,
-#header #nav > li:hover img {
-  display: block;
-}
-#header #nav > li:hover #productsDrop,
-#header #nav > li:hover > .drop {
-  display: block;
 }
 #header #nav > li#logo {
   width: 125px;

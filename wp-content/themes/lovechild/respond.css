@@ -6,6 +6,20 @@ body.news #sidebar #archive,
 body.blog #sidebar #archive{ height:auto}
 #spinbox #slides li a{ position:absolute; top:0; left:0; width:100%; height:100%}
 
+@media screen and (min-width: 801px) {
+#header #nav > li:hover > a > img,
+#header #nav > li.selected > a > img,
+#header #nav > li:hover > #productsDrop, 
+#header #nav > li:hover > .drop,
+#header #nav > li > #productsDrop > li:hover > ul,
+#header #nav > li > #productsDrop > li > ul > li:hover ul,
+#header #nav > li > #productsDrop > li:hover .connector {
+    display: block;
+}
+
+
+}
+
 @media screen and (max-width: 800px) {
 	
 	body{ background:url(images/bg/clouds-tile.jpg)}
@@ -36,9 +50,6 @@ body.blog #sidebar #archive{ height:auto}
 	#header #nav > li:hover img,
 	#header #nav > li > a .button span.shadow{ display:none}
 	#header #nav > li.selected .button, #header #nav > li:hover .button{ top:0}
-	
-	#header #nav > li:hover #productsDrop,
-	#header #nav > li:hover > .drop{ display:none}
 	
 	/* Subnav */
 	#nav li span.subtoggle{ position:absolute; right:0; top:0; display:block; z-index:999; padding:7px 20px;  color:#fff; cursor:pointer; font-size:1em; background:rgba(255,255,255,0.3); box-sizing:border-box}
